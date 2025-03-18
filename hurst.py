@@ -67,17 +67,17 @@ def calculate_liquidity(client, ticker, depth_limit=10):
 	"""
 	try:
 		order_book = client.get_order_book(symbol=ticker, limit=depth_limit)
-		bids = order_book['bids']  # List of [price, quantity]
-		asks = order_book['asks']  # List of [price, quantity]
+		bids = order_book['bids']
+		asks = order_book['asks']
 
 		bid_liquidity = sum(float(bid[1]) for bid in bids)
 		ask_liquidity = sum(float(ask[1]) for ask in asks)
 
 		ticker_info = client.get_ticker(symbol=ticker)
-		quote_volume = float(ticker_info['quoteVolume'])  # Total traded value in quote currency
+		quote_volume = float(ticker_info['quoteVolume']) 
 
-		best_bid = float(order_book['bids'][0][0])  # Best bid price
-		best_ask = float(order_book['asks'][0][0])  # Best ask price
+		best_bid = float(order_book['bids'][0][0]) 
+		best_ask = float(order_book['asks'][0][0]) 
 
 		spread = best_ask - best_bid
 		mid_price = (best_ask + best_bid) / 2
@@ -151,9 +151,9 @@ def main():
 			ticker_list.append(ticker)
 
 	pairs = list(combinations(ticker_list, 2))
-	interval = "1d"  # Change to your desired interval (e.g., "1h", "15m")
-	start_date = "2023-01-01"  # Specify the start date
-	end_date = "2023-12-31"  # Optional: Specify the end date
+	interval = "1d" 
+	start_date = "2023-01-01"
+	end_date = "2023-12-31"
 
 	for pair in tqdm(pairs):
 		historical_data_ticker_1 = fetch_historical_data(pair[0], interval, start_date, end_date)
