@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Black">
+    <option name="sdkName" value="Python 3.12 (mean_rev_hurst)" />
+  </component>
+  <component name="GitLabDefaultAccount">
+    <option name="defaultAccountId" value="5bc99453-4253-4ee6-a88a-3554959347ac" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (mean_rev_hurst)" project-jdk-type="Python SDK" />
+</project>
